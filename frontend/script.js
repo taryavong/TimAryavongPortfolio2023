@@ -1,3 +1,4 @@
+
 // Define variables
 const myButton = document.querySelector('#myButton');
 const myHeading = document.querySelector('#myHeading');
@@ -16,3 +17,4 @@ myButton.addEventListener('click', () => {
   //make bool false so that clicking the button again prompts the else condition instead
   isTextVisible = !isTextVisible;
 });
+
