@@ -1,5 +1,7 @@
 ### https://youtu.be/RcxvrhQKv8I?t=325 great tutorial
 ### used both json and encoded url data
+### be sure to kill all processes in vscode after laptop sleep, otherwise https://stackoverflow.com/questions/67698176/error-loading-webview-error-could-not-register-service-workers-typeerror-fai
+
 @hostname = http://localhost:5000/api/goals
 
 GET {{hostname}}
@@ -9,7 +11,9 @@ Authorization: {{apiKey}}
 ### 
 
 POST {{hostname}}
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
+
+text=my first vlog
 
 ###
 
@@ -34,7 +38,6 @@ Content-Type: application/json
 GET {{hostname}}
 Content-Type: application/x-www-form-urlencoded
 
-test=some data
 
 ### MUST HAVE A new line after "Content-Type" otherwise
 ### "Headername must be a valid HTTP token..." error

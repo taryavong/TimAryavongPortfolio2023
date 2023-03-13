@@ -4,7 +4,8 @@
   "description": "timaryavongportfolio2023 - a new beginning",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "mocha test/*.test.js",
+    "start": "node backend/server/server.js" 
   },
   "repository": {
     "type": "git",
