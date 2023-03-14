@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*.test.js",
-    "start": "node backend/server/server.js" 
+    "start": "node backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,9 +28,11 @@
   "homepage": "https://github.com/taryavong/TimAryavongPortfolio2023#readme",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.1",
     "react": "^18.2.0",
