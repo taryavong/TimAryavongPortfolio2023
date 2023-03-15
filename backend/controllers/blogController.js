@@ -3,6 +3,7 @@ const asyncHandler = require("express-async-handler");
 
 //add blog controller
 const Blog = require('../models/blogModel');
+const User = require('../models/userModel');
 
 // @desc    Get routes
 // @rout    GET /api/goals
@@ -41,6 +42,20 @@ const putBlog = asyncHandler(async(req, res) => {
     throw new Error('Blog not found.');
   }
 
+  const user = await User.findById(req.user.id)
+
+  // check for user 
+  if(!user){
+    res.status(400);
+    throw new Error('User not found');
+  }
+
+  // make sure the logged in user matches the goal user
+  if(blog.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error('User not authorized');
+  }
+
   const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, //get the blog and update it
     {
       new: true,
@@ -61,11 +76,25 @@ const deleteBlog =  asyncHandler(async(req, res) => {
     throw new Error('Blog not found.');
   }
 
+  const user = await User.findById(req.user.id)
+
+  // check for user 
+  if(!user){
+    res.status(400);
+    throw new Error('User not found');
+  }
+
+  // make sure the logged in user matches the goal user
+  if(blog.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error('User not authorized');
+  }
+  
   // no need to assign to a variable like update since, the  json object will be deleted we won't see any new data
-  //const deletedBlog = await Blog.findByIdAndRemove(req.params.id);
+  // const deletedBlog = await Blog.findByIdAndRemove(req.params.id);
   await Blog.findByIdAndRemove(req.params.id);
 
-  res.status(200).json(deletedBlog);
+  res.status(200).json({ id: req.params.id });
 });
 
 module.exports = { //export these controls
