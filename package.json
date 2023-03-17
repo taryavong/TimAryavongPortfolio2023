@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha test/*.test.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix reactfrontend"
+    "client": "npm start --prefix reactfrontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.21"
   }
 }

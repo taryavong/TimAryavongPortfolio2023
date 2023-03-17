@@ -18,7 +18,7 @@ POST  {{hostname}}/register
 Content-Type: application/x-www-form-urlencoded
 
 name=Tim
-&email=Aryavong
+&email=Aryavong@mail.com
 &password=portfolio
 
 ###
@@ -44,3 +44,13 @@ Content-Type: application/json
 
 ###
 
+POST {{hostname}}/login
+Content-Type: application/json
+
+{
+  "name" : "Tim",
+  "email" : "Aryavong@mail.com",
+  "password": "portfolio"
+}
+
+###

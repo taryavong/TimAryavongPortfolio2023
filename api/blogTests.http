@@ -14,22 +14,23 @@ POST {{hostname}}
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGZlZDgyYjRiZmRiNDIyZmFmOTAwOSIsImlhdCI6MTY3ODgyMzk2OSwiZXhwIjoxNjgxNDE1OTY5fQ.WK99RUkajNJvpeO-gLJevM4YwC9ozCICdDriVCGVYXQ
 
-text=my first vlog
+text=my first vlog 3
 
-###
+### 640eb200d49af222aec3d436
 
 PUT {{hostname}}/640eb200d49af222aec3d436
 Content-Type: application/json
+Authorization: Bearer
 
 {
   "text": "hello world!"
 }
 
-###
+### 6410d9ab94364450e1255d57
 
-DELETE {{hostname}}/640eb200d49af222aec3d436
+DELETE {{hostname}}/6410daedb4cf9f4fd2e92c53
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGZlZDgyYjRiZmRiNDIyZmFmOTAwOSIsImlhdCI6MTY3ODg0MTcyMCwiZXhwIjoxNjgxNDMzNzIwfQ.6Vzj-e7nQb1RqpsXRsLu9mUFsgyBK3yJnHqg6DG6IkA
 
 ### 
 
