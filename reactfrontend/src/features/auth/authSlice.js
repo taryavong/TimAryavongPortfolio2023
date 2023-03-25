@@ -108,9 +108,9 @@ export const authSlice = createSlice({
       // Logout
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
-      })
+      });
   },
-})
+});
 
-export const { reset } = authSlice.actions // export reset reducer from above
-export default authSlice.reducer
+export const { reset } = authSlice.actions; // export reset reducer from above
+export default authSlice.reducer;

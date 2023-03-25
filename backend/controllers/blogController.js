@@ -11,7 +11,7 @@ const User = require('../models/userModel');
 const getBlogs = asyncHandler(async (req, res) => {
   const blog = await Blog.find({ user: req.user.id});
 
-  res.status(200).json(blog)
+  res.status(200).json(blog);
 });
 
 // @desc    Set routes
@@ -20,15 +20,15 @@ const getBlogs = asyncHandler(async (req, res) => {
 const setBlog = asyncHandler(async(req, res) => {
   console.log(req.body.text) 
   if(!req.body.text){//require a blog object
-    res.status(400)
+    res.status(400);
     throw new Error('Please add a text field');
   };
 
   const blog = await Blog.create({//declare the text from inside the blog object
     text: req.body.text,
     user: req.user.id,
-  })
-  res.status(200).json(blog)
+  });
+  res.status(200).json(blog);
 });
 
 // @desc    Update routes
@@ -40,21 +40,21 @@ const putBlog = asyncHandler(async(req, res) => {
   if(!blog) { //if there's no blog with this ID
     res.status(400);
     throw new Error('Blog not found.');
-  }
+  };
 
-  const user = await User.findById(req.user.id)
+  const user = await User.findById(req.user.id);
 
   // check for user 
   if(!user){
     res.status(400);
     throw new Error('User not found');
-  }
+  };
 
   // make sure the logged in user matches the goal user
   if(blog.user.toString() !== user.id) {
     res.status(401);
     throw new Error('User not authorized');
-  }
+  };
 
   const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, //get the blog and update it
     {
@@ -74,7 +74,7 @@ const deleteBlog =  asyncHandler(async(req, res) => {
   if(!blog) {
     res.status(400);
     throw new Error('Blog not found.');
-  }
+  };
 
   const user = await User.findById(req.user.id)
 
@@ -82,13 +82,13 @@ const deleteBlog =  asyncHandler(async(req, res) => {
   if(!user){
     res.status(400);
     throw new Error('User not found');
-  }
+  };
 
   // make sure the logged in user matches the goal user
   if(blog.user.toString() !== user.id) {
     res.status(401);
     throw new Error('User not authorized');
-  }
+  };
   
   // no need to assign to a variable like update since, the  json object will be deleted we won't see any new data
   // const deletedBlog = await Blog.findByIdAndRemove(req.params.id);
