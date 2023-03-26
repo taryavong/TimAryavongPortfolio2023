@@ -11,9 +11,10 @@ const protect = asyncHandler(async (req, res, next ) =>{
     try {
       // Get token from header, split at space and take the second string in the split
       token = req.headers.authorization.split(' ')[1];
-
+      console.log(token);
       // Verify token against the one in our ENV
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(decoded);
 
       // Get user from token, see the userController for where the id was set
       // without the hashed password
@@ -23,16 +24,35 @@ const protect = asyncHandler(async (req, res, next ) =>{
       // they perform logging, authentication, and error handling, to pass control to the next middleware function.
       // if next is not called, the request will be left hanging and the response will not be sent.
       next();
+  //   } catch (error) {
+  //     console.log(error);
+  //     console.log("Token failure");
+
+  //     res.status(401);
+  //     throw new Error('Not Authorized');
+  //   };
+  // };
+  // if (!token) {
+  //   res.status(401);
+  //   throw new Error('Not authorized, no token');
+  // };
     } catch (error) {
       console.log(error);
-      res.status(401);
-      throw new Error('Not Authorized');
-    };
-  };
-  if (!token) {
+
+      if (error instanceof jwt.JsonWebTokenError) {
+        // Handle JWT-specific errors, such as "jwt malformed"
+        res.status(401);
+        throw new Error('Invalid token: ' + error.message);
+      } else {
+        // Handle other errors
+        res.status(401);
+        throw new Error('Not Authorized');
+      }
+    }
+    } else {
     res.status(401);
     throw new Error('Not authorized, no token');
-  };
+    }
 });
 
 module.exports = { 

@@ -28,9 +28,23 @@ const getBlogs = async (token) => {
   return response.data;
 };
 
+// Delete user blogs
+const deleteBlog = async (blogId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
+
+  const response = await axios.delete(API_URL + blogId, config);
+  
+  return response.data;
+};
+
 const blogService = {
   createBlog,
   getBlogs,
+  deleteBlog
 };
 
 export default blogService;
