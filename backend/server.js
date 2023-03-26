@@ -18,11 +18,11 @@ app.use('/api/users', require('./routes/userRoutes'));
 
 // Serve frontend
 if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build'))); // react builds static assets here, dirname is current directory
+  app.use(express.static(path.join(__dirname, '../reactfrontend/build'))); // react builds static assets here, dirname is current directory
 
-  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build','index.html')))// point any route aside from api routes to index.html
+  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'reactfrontend', 'build','index.html')))// point any route aside from api routes to index.html
 } else {
-  app.get('/', (req,res) => res.send('Please set to production'))
+  app.get('/', (req,res) => res.send('Please set to production'));
 }
 
 
