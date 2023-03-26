@@ -4,6 +4,7 @@
   "description": "timaryavongportfolio2023 - a new beginning",
   "main": "index.js",
   "scripts": {
+    "start": "node backend/server.js",
     "test": "mocha test/*.test.js",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix reactfrontend",
