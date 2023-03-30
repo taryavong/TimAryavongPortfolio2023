@@ -4,7 +4,11 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+import './css/index.css';
+import './css/tile.css';
+import './css/fonts.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 const container = document.getElementById('root');
 const root = createRoot(container);

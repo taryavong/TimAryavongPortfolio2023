@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import "./fonts.css";
 
 * {
   margin: 0;
@@ -7,13 +8,13 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'ABeeZee' !important;
   height: 100vh;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #f4f4f4;
 }
 
 p {
@@ -31,7 +32,7 @@ li {
 h1,
 h2,
 h3 {
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 
@@ -47,9 +48,13 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 10px;
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  background-color: #003459;
+  color: #f4f4f4 !important;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .header ul {
@@ -86,20 +91,20 @@ h3 {
   color: #828282;
 }
 
-.goals {
+.blogs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-.goal {
+.blog {
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
 }
 
-.goal .close {
+.blog .close {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -124,7 +129,8 @@ h3 {
   width: 100%;
   padding: 10px;
   border: 1px solid #e6e6e6;
-  border-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin-bottom: 10px;
   font-family: inherit;
 }
@@ -136,10 +142,12 @@ h3 {
 }
 
 .btn {
+  font-family: 'ABeeZee';
   padding: 10px 20px;
   border: 1px solid #000;
-  border-radius: 5px;
-  background: #000;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #007EA7;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -156,7 +164,7 @@ h3 {
 }
 
 .btn-reverse {
-  background: #fff;
+  background: #f4f4f4;
   color: #000;
 }
 

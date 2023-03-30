@@ -46,13 +46,12 @@ function Dashboard() {
       <BlogForm />
       <section className='content'>
       {blogs && blogs.length > 0 ? (
-        <div className="goals">
+        <div className="blogs">
           {blogs.map((blog) => ( // map creates a new array populated with the results of every element in the calling array
-            <BlogItem key={blog._id} blog={blog} />
-          ))};
-        </div>
-      ) : (<h3>You have not set any goals.</h3>)
-    };
+       <BlogItem key={blog._id} blog={blog} />
+          ))}
+        </div> ) : (<h3>You have not set any goals.</h3>)
+      }    
       </section>
     </>
   );

@@ -6,7 +6,7 @@ function BlogItem({blog}) {
   const dispatch = useDispatch();
 
   return (
-    <div className='goal'>
+    <div className='blog'>
       <div>
         {new Date(blog.createdAt).toLocaleString('en-US')}
       </div>

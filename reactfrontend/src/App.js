@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <div className="container">
         <Header />
         <Routes>
-          <Route path='/' element={<Dashboard />}/>
+          <Route path='/' element={<Home />}/>
+          <Route path='/Dashboard' element={<Dashboard />}/>
           <Route path='/Login' element={<Login />}/>
           <Route path='/Register' element={<Register />}/>
         </Routes>
@@ -22,6 +24,6 @@ function App() {
     <ToastContainer />
     </>
   );
-}
+};
 
 export default App;

@@ -17,15 +17,22 @@ const onLogout = () => {
   return (
     <header className='header'>
       <div className='logo'>
-        <Link to='/'>BlogSetter</Link>
+        <Link to='/'>Home</Link>
       </div>
       <ul>
         {user ? (
-          <li>
-            <button className='btn' onClick={onLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
+          <>
+            <li>
+              <Link to='/dashboard'>
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <button className='btn' onClick={onLogout}>
+                <FaSignOutAlt /> Logout
+              </button>
+            </li>
+          </>
         ) : (
           <>
             <li>

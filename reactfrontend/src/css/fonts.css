@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'ABeeZee'; /* Replace 'YourFontName' with a name for the font */
+  src: url('../fonts/ABeeZee-Regular.ttf') format('truetype'); /* Replace 'YourFontFile.woff2' with the actual font file name and format */
+}
+
+@font-face {
+  font-family: 'ABeeZee-Italic'; /* Replace 'YourFontName' with a name for the font */
+  src: url('../fonts/ABeeZee-Italic.ttf') format('truetype'); /* Replace 'YourFontFile.woff2' with the actual font file name and format */
+}
