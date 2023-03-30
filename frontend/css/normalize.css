@@ -144,9 +144,9 @@ sup {
  * Remove the border on images inside links in IE 10.
  */
 
-img {
+/* img {
   border-style: none;
-}
+} */
 
 /* Forms
    ========================================================================== */
@@ -324,9 +324,9 @@ details {
  * Add the correct display in all browsers.
  */
 
-summary {
+/* summary {
   display: list-item;
-}
+} */
 
 /* Misc
    ========================================================================== */

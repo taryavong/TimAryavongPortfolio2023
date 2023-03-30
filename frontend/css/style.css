@@ -2,7 +2,7 @@
 body {
   display: flex;/*undo user agent style aka. the display: block problem*/
   flex-wrap: wrap;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   font-size: 4vh;
   line-height: 1.5;
   background-color: #000000;
@@ -12,19 +12,19 @@ body {
 /* Header styles */
 header {
   display: flex;
-  background: url(../images/space.jpg);
+  background: url(/images/kingdom\ hearts.jpg);
   background-size: cover; /*This will stretch the image to cover the entire width of the div, even if it crops the top and bottom slightly.*/
   background-repeat: no-repeat;
   background-color: black;
   background-position: center;
-  color: #fff;
+  color: #f4f4f4;
   padding: 1rem;
-  border-radius: 20px;
   flex-basis: 100%;
   aspect-ratio: 2/1;
   justify-content: space-around;
   margin: 0.5rem;
 }
+
 h1 {
   display: flex;
   font-size: 4vh;
@@ -62,17 +62,17 @@ h1 {
 }
 
 #gallery {
-  background:url(../images/kingdom\ hearts.jpg);
+  background:url(/images/space.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
   background-position: center;
 }
-img {
+/* img {
   width: 50vw;
   height: 50vh;
   object-fit: fill;
-}
+} */
  @media screen {
   
  }
