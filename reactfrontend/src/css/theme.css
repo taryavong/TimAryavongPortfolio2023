@@ -1,0 +1,30 @@
+.backBlue {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #00171F;
+}
+
+.midBlue {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #003459; /* Set the background color of your choice */
+  overflow: hidden;
+}
+
+.foreBlue {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #007EA7; /* Set the background color of your choice */
+}
+
+.accentBlue {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #00A8E8;
+}
+
+.makeItWhite {
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #FFFFFF;
+}

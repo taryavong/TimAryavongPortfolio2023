@@ -8,7 +8,7 @@ import './css/index.css';
 import './css/tile.css';
 import './css/fonts.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+import './css/theme.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

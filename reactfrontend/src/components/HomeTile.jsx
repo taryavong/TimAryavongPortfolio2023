@@ -8,7 +8,7 @@ function HomeTile(page) {
       {page && page.name === 'Gallery' ? (
         <GalleryTile to={page.to}/>
       ) : (
-      <Link className='tile' to={page.to} style={{ textDecoration: 'none' }}>
+      <Link className='tile midBlue' to={page.to} style={{ textDecoration: 'none' }}>
         <div style={{ cursor: 'pointer' }}>
           <h1>{page.name}</h1>
         </div>

@@ -18,7 +18,7 @@ const GalleryTile = (page) => {
     //     </Carousel>
     //   )}
     // </div>
-      <div className='tile'>
+      <div className='tile midBlue'>
           {localImages.length > 0 && (
               <Carousel showStatus={false} showThumbs={false}>
                   {localImages.map((image) => (

@@ -7,46 +7,41 @@
   padding-right: calc(10% + 10px);
   padding-top: calc(5% + 10px);
   padding-bottom: calc(5% + 10px);
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #00171F;
 }
 
+/*Affects the first nested div inside .tile*/
 .tile > div {
-  background: #007EA7; /* Set the background color of your choice */
-  margin-bottom: 20px; /* Set the space between the rows */
-  position: relative;
   color: #000;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  aspect-ratio: 1/1;
 }
-
-.tile > div::before {
-  content: "";
-  padding-bottom: 100%;
-  /* display: flex; */
-}
+  
 
 /* Your custom CSS file */
 .galleryLink {
   width: 100%;
   height: 100%; /* Adjust to the desired height */
-  overflow: hidden;
 }
 
-/* Gallery.css */
-.carousel .slide img {
+/* Home page gallery slider */
+.carousel.carousel-slider {
   width: auto;
   height: 100%;
 }
 
+.slider.animated {
+  height: 100%;
+}
+
 img {
+  width: auto;
+  height: 100%;
   object-fit: cover;
 }
 
-
+.slider-wrapper.axis-horizontal {
+  height: 100%;
+}
