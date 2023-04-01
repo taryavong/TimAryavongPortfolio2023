@@ -2,6 +2,7 @@
 .tile-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-row: auto auto;
   grid-gap: 20px;
   padding-left: calc(10% + 10px);
   padding-right: calc(10% + 10px);
@@ -12,7 +13,7 @@
 /*Affects the first nested div inside .tile*/
 .tile > div {
   color: #000;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -20,21 +21,11 @@
 }
   
 
-/* Your custom CSS file */
+/* Affects the div before img in the carousel */
 .galleryLink {
-  width: 100%;
-  height: 100%; /* Adjust to the desired height */
-}
-
-/* Home page gallery slider */
-.carousel.carousel-slider {
-  width: auto;
   height: 100%;
 }
 
-.slider.animated {
-  height: 100%;
-}
 
 img {
   width: auto;
@@ -42,6 +33,16 @@ img {
   object-fit: cover;
 }
 
-.slider-wrapper.axis-horizontal {
-  height: 100%;
+/* div.tile.midBlue { /*starts in the first column, spans 2 columns
+  display: grid;
+  grid-row: 1/ 2;
+  grid-column: 1/-1;
+  aspect-ratio: 2/1;
+  box-sizing: border-box;
+} */
+
+.carousel-root{
+  min-height: 100%;
+  order: -1;
+  background: rgb(126, 7, 7);
 }

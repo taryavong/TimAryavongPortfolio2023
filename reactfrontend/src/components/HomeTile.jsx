@@ -7,12 +7,12 @@ function HomeTile(page) {
     <>
       {page && page.name === 'Gallery' ? (
         <GalleryTile to={page.to}/>
-      ) : (
-      <Link className='tile midBlue' to={page.to} style={{ textDecoration: 'none' }}>
-        <div style={{ cursor: 'pointer' }}>
-          <h1>{page.name}</h1>
-        </div>
-      </Link>)
+        ) : (
+        <Link className={`${page.name} tile midBlue`} to={page.to} style={{ textDecoration: 'none' }}>
+          <div style={{ cursor: 'pointer' }}>
+            <h1>{page.name}</h1>
+          </div>
+        </Link>)
       }
     </>
   );  

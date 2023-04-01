@@ -28,3 +28,21 @@
   border-top-right-radius: 10px;
   background: #FFFFFF;
 }
+
+.pageContent {
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+}
+
+.aboutList {
+  color: white;
+  display: flex;
+  list-style-type: square;
+  list-style-position: inside;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
