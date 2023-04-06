@@ -10,6 +10,7 @@ function Home() {
         <HomeTile to="/gallery" name="Gallery"/>
         <HomeTile to="/blog" name="Blog"/>
         <HomeTile to="/dashboard" name="Dashboard"/>
+        <HomeTile to="/openai" name="OpenAi"/>
       </div>
     </>
   )

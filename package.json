@@ -9,7 +9,7 @@
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix reactfrontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix reactfrontend && npm run build --prefix reactfrontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix reactfrontend && npm run build --prefix reactfrontend"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.1",
+    "openai": "^3.2.1",
     "react": "^18.2.0",
     "react-router-dom": "^6.8.2"
   },

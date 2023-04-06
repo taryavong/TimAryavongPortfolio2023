@@ -16,6 +16,9 @@ app.use(express.urlencoded({extended: false}));
 app.use('/api/blogs', require('./routes/blogRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 
+// Use the openAiRoutes
+app.use('/api/openai', require('./routes/openAiRoutes'));
+
 // Serve frontend
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../reactfrontend/build'))); // react builds static assets here, dirname is current directory
@@ -24,7 +27,6 @@ if(process.env.NODE_ENV === 'production') {
 } else {
   app.get('/', (req,res) => res.send('Please set to production'));
 }
-
 
 app.use(errorHandler);
 

@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import About  from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
+import OpenAi from "./pages/OpenAi";
+
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
           <Route path='/Register' element={<Register />}/>
           <Route path='/Gallery' element={<Gallery />}/>
           <Route path='/Blog' element={<Blog />}/>
-          <Route path='/About' element={<About />}/>          
+          <Route path='/About' element={<About />}/>
+          <Route path='/OpenAi' element={<OpenAi />}/>
         </Routes>
       </div>
     </Router>

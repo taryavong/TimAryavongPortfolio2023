@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { FaSignInAlt } from 'react-icons/fa';
-import { login, reset} from '../features/auth/authSlice'
-import Spinner from '../components/Spinner'
+import { login, reset} from '../features/auth/authSlice';
+import Spinner from '../components/Spinner';
 
 function Login() {
   const [formData, setFormData] = useState({ // state allows you to store and manage the data in this component
