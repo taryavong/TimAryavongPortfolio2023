@@ -39,7 +39,7 @@ function Dashboard() {
   // March 26, 2023 - it's best to use an AND condition to first check if the blog object is defined(there's a user logged in, and blog is pulled from db), to then be able to check afterwards the length of the blog array. It was probably over looked since the tutorial did actually this sort of thing in the h1 welcome with user && user.name
   return (
     <>
-      <section className='heading'>
+      <section className='heading midBlue'>
         <h1>Welcome {user && user.name}</h1>
         <p>Blogs Dashboard</p>
       </section>

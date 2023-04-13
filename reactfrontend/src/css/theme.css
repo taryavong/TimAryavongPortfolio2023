@@ -46,3 +46,12 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
+/* OpenAi Page Style */
+.accentBlue.heading > h1{
+  padding: 10px;
+}
+
+.heading p {
+  color: white;
+}

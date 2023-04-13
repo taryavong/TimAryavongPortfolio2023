@@ -1,14 +1,17 @@
 const asyncHandler = require("express-async-handler");
-const openai = require("openai");
+const { Configuration, OpenAIApi } = require("openai");
 
-// Configure OpenAI API key
-openai.apiKey = process.env.OPENAI_API_KEY;
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY
+});
+
+const openai = new OpenAIApi(configuration);
 
 // @desc    Generate text based on user prompts
 // @route   POST /api/openai/generate
 // @access  Private
 const generateText = asyncHandler(async (req, res) => {
-  console.log(req.body.text);
+  console.log("empty?", req.body.text);
   if (!req.body.text) {
     res.status(400);
     throw new Error("Please add a text field");
@@ -16,16 +19,17 @@ const generateText = asyncHandler(async (req, res) => {
 
   try {
     const prompt = req.body.text;
-    const response = await openai.Completion.create({
-      engine: "davinci-codex",
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
       prompt: prompt,
       max_tokens: 100,
-      n: 1,
-      stop: null,
-      temperature: 1.0,
+      // n: 1,
+      // stop: null,
+      // temperature: 1.0,
     });
 
-    const generatedText = response.choices[0].text.trim();
+    const generatedText = response.data.choices[0].text;
+    console.log("Generated text (server):", generatedText);
 
     res.status(200).json({ generatedText });
   } catch (error) {

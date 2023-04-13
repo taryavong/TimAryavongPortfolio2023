@@ -16,6 +16,8 @@ function OpenAi() {
 
   useEffect(() => {
     if (isError) {
+      console.log('Error message:', message); // Add this line
+
       toast.error(message);
     }
   }, [isError, message]);
@@ -26,7 +28,7 @@ function OpenAi() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(generateText({ prompt }));
+    dispatch(generateText( prompt ));
   };
 
   if (isLoading) {
@@ -35,7 +37,7 @@ function OpenAi() {
 
   return (
     <>
-      <section className="heading">
+      <section className="accentBlue heading">
         <h1>
           <FaRocket /> Generate AI Text
         </h1>
@@ -63,8 +65,8 @@ function OpenAi() {
       </section>
       {isSuccess && (
         <section className="response">
-          <h2>AI-Generated Text:</h2>
-          <p>{generatedText}</p>
+          <h2 class="midBlue">AI-Generated Text:</h2>
+          <p class="midBlue">{generatedText}</p>
         </section>
       )}
     </>

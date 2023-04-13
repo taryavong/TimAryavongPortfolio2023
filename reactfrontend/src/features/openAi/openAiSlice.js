@@ -12,9 +12,17 @@ const initialState = {
 // Generate text using OpenAI API
 export const generateText = createAsyncThunk(
   "openai/generateText",
-  async (promptParameters, thunkAPI) => {
+  async (prompt, thunkAPI) => {
     try {
-      return await openaiService.generateText(promptParameters);
+      const token = thunkAPI.getState().auth.user.token;
+      const promptParameters = {
+        text: prompt,
+      };
+      const generatedText = await openaiService.generateText(promptParameters, token);
+      console.log('Generated text:', generatedText); // Add this line
+
+      return generatedText;
+
     } catch (error) {
       const message =
         (error.response &&
@@ -36,14 +44,18 @@ export const openaiSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(generateText.pending, (state) => {
+        console.log("generateText pending"); // Add this line
         state.isLoading = true;
       })
       .addCase(generateText.fulfilled, (state, action) => {
+        console.log("generateText fulfilled"); // Add this line
+        console.log("Payload (fulfilled):", action.payload); // Add this line
         state.isLoading = false;
         state.isSuccess = true;
         state.generatedText = action.payload;
       })
       .addCase(generateText.rejected, (state, action) => {
+        console.log("generateText rejected"); // Add this line
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

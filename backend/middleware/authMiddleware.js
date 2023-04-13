@@ -37,8 +37,6 @@ const protect = asyncHandler(async (req, res, next ) =>{
   //   throw new Error('Not authorized, no token');
   // };
     } catch (error) {
-      console.log(error);
-
       if (error instanceof jwt.JsonWebTokenError) {
         // Handle JWT-specific errors, such as "jwt malformed"
         res.status(401);
